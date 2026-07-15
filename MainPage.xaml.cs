@@ -2,11 +2,24 @@
 
 public partial class MainPage : ContentPage
 {
-    int count = 0;
 
     public MainPage()
     {
         InitializeComponent();
+        
+    }
+
+    public void OnTranslate()
+    {
+        string raw = PhoneNumberText.Text;
+        if (!string.IsNullOrWhiteSpace(raw))
+        {
+            string result = PhonewordTranslator.ReceiveRaw(raw);
+        }
+        else
+        {
+            return;
+        }
     }
     
 }
